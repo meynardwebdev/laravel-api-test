@@ -21,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('products', ProductController::class);
-Route::post('/products/{id}/reviews', ReviewController::class);
+Route::put('/products/{id}', [ProductController::class, 'update']);
+Route::post('/products/{id}/reviews', [ReviewController::class, 'store'])->name('product.create-review');

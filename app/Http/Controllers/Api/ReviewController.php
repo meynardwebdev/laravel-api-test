@@ -18,7 +18,7 @@ class ReviewController extends BaseController
      * @param StoreReviewRequest $request
      * @return JsonResponse
      */
-    public function __invoke($id, StoreReviewRequest $request)
+    public function store($id, StoreReviewRequest $request)
     {
         $validated = $request->validated();
         $product = Product::find($id);
